@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
+import axios from "../../axios";
+
 
 import Post from "../../components/Post/Post";
 import FullPost from "../../components/FullPost/FullPost";
@@ -25,7 +27,7 @@ class Blog extends Component {
           };
         });
         this.setState({ posts: updatedPosts });
-        console.log(response);
+        // console.log(response);
       })
       .catch((error) => {
         // console.log(error);
