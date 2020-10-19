@@ -23,6 +23,7 @@ class Blog extends Component {
                 In this way react rerenders only those parts that needed to be reloaded. 
                 We are not loading the same page again: */}
                 <Link to={{
+                  // Absolute path:
                   pathname: "/new-post",
                   hash: "#submit",
                   search: "?quick-submit=true"
