@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import axios from "axios";
-import { Route, Link } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 import "./Blog.css";
 import Posts from "../Blog/Posts/Posts";
 import NewPost from "./NewPost/NewPost";
@@ -16,18 +16,24 @@ class Blog extends Component {
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <NavLink to="/" 
+                exact
+                activeClassName="my-active"
+                activeStyle={{
+                  color: "#fa923f",
+                  textDecoration: "underline"
+                }}>Home</NavLink>
               </li>
               <li>
-                {/* This is the way not to reload the page every time when clicking on the inner link.
+                {/* This is the way not to reload the page every time when clicking on the inner NavLink.
                 In this way react rerenders only those parts that needed to be reloaded. 
                 We are not loading the same page again: */}
-                <Link to={{
+                <NavLink to={{
                   // Absolute path:
                   pathname: "/new-post",
                   hash: "#submit",
                   search: "?quick-submit=true"
-                }}>New Post</Link>
+                }}>New Post</NavLink>
               </li>
             </ul>
           </nav>
